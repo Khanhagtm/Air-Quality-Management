@@ -21,7 +21,7 @@ Dự án này xây dựng một hệ thống giám sát chất lượng không k
 
 ## Công Nghệ Sử Dụng
 
-- **Hardware**: ESP8266/ESP32, cảm biến chất lượng không khí (PM2.5, PM10, CO2, nhiệt độ, độ ẩm).
+- **Hardware**: ESP8266, Arduino Uno R3, cảm biến chất lượng không khí (MQ-2, MQ-7 ,Dht11).
 - **Backend**: Java, Spring Boot, REST API.
 - **Frontend**: HTML, CSS, JavaScript, Bootstrap.
 - **Database**: MySQL.
@@ -31,7 +31,7 @@ Dự án này xây dựng một hệ thống giám sát chất lượng không k
 
 ### Yêu Cầu
 
-- **Phần cứng**: Các cảm biến, ESP8266, và các module cần thiết.
+- **Phần cứng**: Các cảm biến, ESP8266, Arduino Uno và các module cần thiết.
 - **Phần mềm**: Java 8+, Maven, MySQL.
 
 ### Hướng Dẫn Cài Đặt
@@ -39,4 +39,8 @@ Dự án này xây dựng một hệ thống giám sát chất lượng không k
 1. **Clone dự án về máy:**
    ```bash
    git clone https://github.com/Khanhagtm/Air-Quality-Management.git
+
+## Chi tiết thêm
+Xem chi tiết về hệ thống tại file ĐỒ ÁN CỬ NHÂN HỆ THỐNG GIÁM SÁT CHẤT LƯỢNG KHÔNG KHÍ.pdf
+
    
