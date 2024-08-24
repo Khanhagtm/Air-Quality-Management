@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 48px;
+    }
+  </style>
+</head>
+<body>
+<p th:text="${'Kính gửi ' + name}"></p>
+<p> Tôi muốn báo cáo rằng hệ thống của chúng tôi đã phát hiện một trong các tham số đang vượt ngưỡng cho phép. Chi tiết:  </p>
+<p th:text="${'- Tên tham số: ' + sensorType}"></p>
+<p th:text="${'- Giá trị tham số: ' + sensorValue}"></p>
+<p th:text="${'- Thời điểm: ' + time}"></p>
+
+<p>Đây có thể là một dấu hiệu của sự cố hoặc sai lệch trong quá trình hoạt động. Vui lòng kiểm tra và xác nhận nguyên nhân, sau đó triển khai các biện pháp khắc phục tương ứng.</p>
+<p>Nếu cần bất kỳ trợ giúp nào, xin vui lòng liên hệ với nhóm kỹ thuật. </p>
+<p>Đây là email tự động vui lòng không trả lời.</p>
+</body>
+</html>

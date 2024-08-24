@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Statistics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="temperatureChart"></canvas>
+<canvas id="humidityChart"></canvas>
+<canvas id="gasChart"></canvas>
+<canvas id="coChart"></canvas>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var statistics = [[${statistics}]];
+
+    function getData(sensorType) {
+        return statistics.filter(stat => stat.sensorType === sensorType);
+    }
+
+    function getLabels(data) {
+        return data.map(stat => stat.date);
+    }
+
+    function getMaxValues(data) {
+        return data.map(stat => stat.maxValue);
+    }
+
+    function getMinValues(data) {
+        return data.map(stat => stat.minValue);
+    }
+
+    function getAvgValues(data) {
+        return data.map(stat => stat.avgValue);
+    }
+
+    function createChart(ctx, label, data) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: getLabels(data),
+                datasets: [
+                    {
+                        label: 'Max',
+                        data: getMaxValues(data),
+                        backgroundColor: 'rgba(0, 156, 255, .7)'
+                    },
+                    {
+                        label: 'Min',
+                        data: getMinValues(data),
+                        backgroundColor: 'rgba(0, 156, 255, .5)'
+                    },
+                    {
+                        label: 'Avg',
+                        data: getAvgValues(data),
+                        backgroundColor: 'rgba(0, 156, 255, .3)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    }
+
+    var temperatureData = getData(0);
+    var humidityData = getData(1);
+    var gasData = getData(2);
+    var coData = getData(3);
+
+    createChart(document.getElementById('temperatureChart').getContext('2d'), 'Temperature', temperatureData);
+    createChart(document.getElementById('humidityChart').getContext('2d'), 'Humidity', humidityData);
+    createChart(document.getElementById('gasChart').getContext('2d'), 'Gas', gasData);
+    createChart(document.getElementById('coChart').getContext('2d'), 'CO', coData);
+    /*]]>*/
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+mailServer:
+  host: smtp.gmail.com
+  port: 587
+  email: khanhagtm@gmail.com
+  password: diaezuceyywaifse
+  protocol: smtp
+  isSSL: false

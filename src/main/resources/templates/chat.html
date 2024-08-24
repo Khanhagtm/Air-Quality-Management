@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/css/chat.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/js/chat.js"></script>
+</head>
+<body>
+<div id="chat-page" class="container">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Chat with Admin</h2>
+        </div>
+        <div class="chat-history" id="messageArea"></div>
+        <form id="messageForm" name="messageForm">
+            <input type="text" id="message" placeholder="Type a message..." autocomplete="off" />
+            <input type="hidden" id="receiver" value="adminUsername" />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
